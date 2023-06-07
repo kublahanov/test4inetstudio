@@ -1,5 +1,18 @@
 <?php
 
+/**
+ * @param string $text
+ * @return void
+ */
+function info(string $text): void
+{
+    echo PHP_EOL;
+    echo $text;
+    echo PHP_EOL;
+    echo str_repeat('-', mb_strlen($text));
+    echo PHP_EOL;
+}
+
 $array = [
     ['id' => 1, 'date' => '12.01.2020', 'name' => 'test1',],
     ['id' => 2, 'date' => '02.05.2020', 'name' => 'test2',],
@@ -9,6 +22,10 @@ $array = [
     ['id' => 3, 'date' => '06.06.2020', 'name' => 'test3',],
 ];
 
+info('Исходный массив: ');
+
+print_r($array);
+
 /**
  * 1. Выделить уникальные записи (убрать дубли) в отдельный массив.
  * В конечном массиве не должно быть элементов с одинаковым id.
@@ -16,13 +33,27 @@ $array = [
 
 $resultArray = array_column($array, null, 'id');
 
+info('Задание 1: Выбираем уникальные по полю id записи.');
+
 print_r($resultArray);
 
 /**
  * 2. Отсортировать многомерный массив по ключу (любому).
  */
 
+info('Задание 2: Сортируем массив по полю id.');
+
 $resultArray = array_column($array, null, 'id');
 ksort($resultArray);
+
+print_r($resultArray);
+
+/**
+ * 3. Вернуть из массива только элементы, удовлетворяющие внешним условиям (например элементы с определённым id).
+ */
+
+info('Задание 3: Фильтруем массив по полю id, и условию id > 2.');
+
+$resultArray = array_filter($array, fn($item) => $item['id'] > 2);
 
 print_r($resultArray);
