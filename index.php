@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * Форматированный вывод.
  * @param string $text
  * @return void
  */
@@ -17,6 +18,10 @@ function info(string $text = ''): void
     echo str_repeat('-', mb_strlen($text));
     echo PHP_EOL;
 }
+
+/**
+ * Начало.
+ */
 
 $array = [
     ['id' => 1, 'date' => '12.01.2020', 'name' => 'test1',],
@@ -79,9 +84,10 @@ print_r($resultArray);
  * - таблица с тегами tags (id INTEGER, name TEXT)
  * - и таблица связи товаров и тегов goods_tags (tag_id INTEGER, goods_id INTEGER, UNIQUE(tag_id, goods_id)).
  * Выведите id и названия всех товаров, которые имеют все возможные теги в этой базе.
+ * На выходе: SQL-запрос.
  */
 
-info('Задание 4: SQL-запрос.');
+info('Задание 5: SQL-запрос.');
 
 $query = "
     SELECT
@@ -101,5 +107,29 @@ $query = "
 ";
 
 print_r($query);
+
+/**
+ * 6. Выбрать без join-ов и подзапросов все департаменты, в которых есть мужчины,
+ * и все они (каждый) поставили высокую оценку (строго выше 5).
+ * create table evaluations
+ * (
+ *     respondent_id uuid primary key, -- ID респондента
+ *     department_id uuid,             -- ID департамента
+ *     gender        boolean,          -- true — мужчина, false — женщина
+ *     value         integer           -- Оценка
+ * );
+ * На выходе: SQL-запрос.
+ */
+
+info('Задание 6: SQL-запрос.');
+
+$query = "
+";
+
+print_r($query);
+
+/**
+ * Окончание.
+ */
 
 info();
