@@ -4,9 +4,14 @@
  * @param string $text
  * @return void
  */
-function info(string $text): void
+function info(string $text = ''): void
 {
     echo PHP_EOL;
+
+    if (!$text) {
+        return;
+    }
+
     echo $text;
     echo PHP_EOL;
     echo str_repeat('-', mb_strlen($text));
@@ -31,9 +36,9 @@ print_r($array);
  * В конечном массиве не должно быть элементов с одинаковым id.
  */
 
-$resultArray = array_column($array, null, 'id');
-
 info('Задание 1: Выбираем уникальные по полю id записи.');
+
+$resultArray = array_column($array, null, 'id');
 
 print_r($resultArray);
 
@@ -55,5 +60,15 @@ print_r($resultArray);
 info('Задание 3: Фильтруем массив по полю id, и условию id > 2.');
 
 $resultArray = array_filter($array, fn($item) => $item['id'] > 2);
+
+print_r($resultArray);
+
+/**
+ * 4. Изменить в массиве значения и ключи (использовать name => id в качестве пары ключ => значение).
+ */
+
+info('Задание 4: Создаём массив на основе ключа по полю name.');
+
+$resultArray = array_column($array, 'id', 'name');
 
 print_r($resultArray);
