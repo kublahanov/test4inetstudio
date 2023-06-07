@@ -72,3 +72,34 @@ info('Задание 4: Создаём массив на основе ключа
 $resultArray = array_column($array, 'id', 'name');
 
 print_r($resultArray);
+
+/**
+ * 5. В базе данных имеется:
+ * - таблица с товарами goods (id INTEGER, name TEXT),
+ * - таблица с тегами tags (id INTEGER, name TEXT)
+ * - и таблица связи товаров и тегов goods_tags (tag_id INTEGER, goods_id INTEGER, UNIQUE(tag_id, goods_id)).
+ * Выведите id и названия всех товаров, которые имеют все возможные теги в этой базе.
+ */
+
+info('Задание 4: SQL-запрос.');
+
+$query = "
+    SELECT
+        g.id, g.name
+    FROM
+        tags t
+    INNER JOIN
+        goods_tags gt
+        ON gt.tag_id = t.id
+    INNER JOIN
+        goods g
+        ON g.id = gt.goods_id
+    GROUP BY
+        g.id, g.name
+    HAVING
+        COUNT(t.id) = (SELECT COUNT(*) FROM tags)
+";
+
+print_r($query);
+
+info();
