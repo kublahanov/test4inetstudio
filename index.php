@@ -17,3 +17,12 @@ $array = [
 $resultArray = array_column($array, null, 'id');
 
 print_r($resultArray);
+
+/**
+ * 2. Отсортировать многомерный массив по ключу (любому).
+ */
+
+$resultArray = array_column($array, null, 'id');
+ksort($resultArray);
+
+print_r($resultArray);
