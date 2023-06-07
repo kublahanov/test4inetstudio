@@ -1,0 +1,15 @@
+{
+  "name": "kublahanov/test4inetstudio",
+  "description": "test4inetstudio: Тестовое задание на позицию backend-разработчик.",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Roman Kondrashov",
+      "email": "nr.kondrashov@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4"
+  }
+}
