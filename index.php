@@ -115,7 +115,7 @@ print_r($query);
  * (
  *     respondent_id uuid primary key, -- ID респондента
  *     department_id uuid,             -- ID департамента
- *     gender        boolean,          -- true — мужчина, false — женщина
+ *     gender        boolean,          -- true — мужчина, false — женщина (сексизм?)
  *     value         integer           -- Оценка
  * );
  * На выходе: SQL-запрос.
