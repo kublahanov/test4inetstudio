@@ -10,4 +10,4 @@
 php ./index.php
 ```
 
-Команда выполняется в корне репозитория, при наличии установленного PHP CLI.
+Команда выполняется в корне репозитория, при наличии установленного <a href="https://www.php.net/manual/ru/features.commandline.usage.php">PHP CLI</a>.
