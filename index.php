@@ -124,6 +124,18 @@ print_r($query);
 info('Задание 6: SQL-запрос.');
 
 $query = "
+    SELECT
+        department_id,
+        COUNT(*) cnt,
+        SUM(value) sum
+    FROM
+        evaluations
+    WHERE
+        gender = true
+    GROUP BY
+        department_id, gender
+    HAVING
+        sum > cnt * 5
 ";
 
 print_r($query);
